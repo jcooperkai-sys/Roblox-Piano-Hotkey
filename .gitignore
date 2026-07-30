@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.DS_Store
+*.log
+npm-debug.log*
+
+# Source MIDI files are not redistributed. They are copyrighted commercial
+# recordings; the converter reads them locally and only the generated note
+# timings are committed. Put your own MIDIs here and run tools/midi-to-vp.js.
+midi/

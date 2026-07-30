@@ -1,0 +1,23 @@
+{
+  "name": "roblox-piano-hotkey",
+  "version": "1.0.0",
+  "description": "Smart legal Roblox piano hotkey — timed playback, no injection",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging"
+  },
+  "author": "Jeffery Eckert / Humane AI",
+  "license": "MIT",
+  "dependencies": {
+    "@jitsi/robotjs": "^0.6.18",
+    "@tonejs/midi": "^2.0.28",
+    "electron": "^43.2.0",
+    "midi": "^2.0.0"
+  },
+  "allowScripts": {
+    "@jitsi/robotjs@0.6.24": true,
+    "electron@35.7.5": true,
+    "midi@2.0.0": true
+  }
+}

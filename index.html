@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+    />
+    <title>Roblox Piano Hotkey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div id="accessBanner" class="access-banner" style="display:none">
+        <strong>Accessibility required</strong> — macOS needs Accessibility permission for hotkeys and key sending to work.
+        <div class="access-banner-btns">
+          <button id="btnGrantAccess" type="button" class="primary small">Grant Access</button>
+          <button id="btnOpenAccess2" type="button" class="small">Open System Settings</button>
+        </div>
+      </div>
+
+      <header>
+        <h1>ROBLOX PIANO HOTKEY</h1>
+        <p class="sub">Smart timed playback · no injection · legal keystrokes</p>
+      </header>
+
+      <section class="panel">
+        <label for="songSelect">Song</label>
+        <select id="songSelect" aria-label="Song list"></select>
+        <div class="meta" id="songMeta">—</div>
+      </section>
+
+      <section class="panel row">
+        <div class="field">
+          <label for="speed">Speed <span id="speedVal">1.00x</span></label>
+          <input id="speed" type="range" min="0.5" max="1.5" step="0.05" value="1" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <label class="toggle">
+          <input type="checkbox" id="humanize" />
+          <span class="box"></span>
+          <span class="toggle-text">
+            <strong>Humanize / inconsistencies</strong>
+            <small>Occasional missed key + slight timing jitter (sounds less robotic)</small>
+          </span>
+        </label>
+      </section>
+
+      <section class="panel controls">
+        <button id="btnPreview" type="button" class="preview">▶ PREVIEW</button>
+        <button id="btnPlay" class="primary" type="button">PLAY  (=)</button>
+        <button id="btnStop" type="button">STOP  (−)</button>
+      </section>
+
+      <section class="panel status-panel">
+        <div class="status-line">
+          <span>Status</span>
+          <strong id="statusText">Idle</strong>
+        </div>
+        <div class="bar"><div id="progressBar"></div></div>
+        <div class="status-line dim">
+          <span id="noteInfo">0 / 0 notes</span>
+          <span id="missInfo"></span>
+        </div>
+      </section>
+
+      <section class="panel help">
+        <h2>How to use</h2>
+        <ol>
+          <li>Open Roblox and click the in-game piano so it has focus.</li>
+          <li>Pick a song from the dropdown.</li>
+          <li>Press <kbd>=</kbd> to start · <kbd>−</kbd> to stop (global hotkeys).</li>
+          <li>On first run, allow <strong>Accessibility</strong> for <strong>Electron</strong> in System Settings → Privacy &amp; Security → Accessibility.</li>
+        </ol>
+        <p class="dim" id="accessPath" style="display:none">
+          Dev mode path: <code>node_modules/electron/dist/Electron.app</code>
+        </p>
+        <button id="btnAccess" type="button" class="linkish">Open Accessibility settings</button>
+        <button id="btnTest" type="button" class="linkish">Test keystroke (a)</button>
+      </section>
+
+      <footer>
+        Humane AI · keystrokes only · focus the piano before hitting =
+      </footer>
+    </div>
+    <script src="preview.js"></script>
+    <script src="renderer.js"></script>
+  </body>
+</html>
