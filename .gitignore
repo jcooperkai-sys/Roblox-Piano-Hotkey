@@ -9,3 +9,6 @@ npm-debug.log*
 # recordings; the converter reads them locally and only the generated note
 # timings are committed. Put your own MIDIs here and run tools/midi-to-vp.js.
 midi/
+
+# Local-only songs. Kept off the public repo by request.
+songs/local/
